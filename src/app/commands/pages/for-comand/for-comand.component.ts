@@ -10,21 +10,23 @@ import { ComandService } from "../../serives/comand.service";
 
 export class ForComandComponent {
 
-  data: string = '';
+  termino: string = '';
+  //data: string = '';
   hayError: boolean = false;
 
   comand: Comand[] = [];
 
   constructor(private comandoService: ComandService) {}
 
-  search(data: string) {
+  search(termino: string) {
     this.hayError = false;
-    this.data = data;
+    this.termino = termino;
+    console.log(this.termino)
 
-    this.comandoService.searchComand(data)
-    .subscribe((comands) => {
-      console.log(comands);
-      this.comand = comands;
+    this.comandoService.searchComand(termino)
+    .subscribe((comand) => {
+      console.log(comand);
+      this.comand = comand;
     }, (err) => {
       this.hayError = true;
       this.comand = [];

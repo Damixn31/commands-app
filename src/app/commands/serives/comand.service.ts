@@ -10,7 +10,7 @@ import { Comand } from "../interfaces/comand.interfaces";
 
 export class ComandService {
 
-  private urlEndPoint:string = 'http://localhost:8080/api/comands';
+  private urlEndPoint:string = 'http://localhost:8080/api/commands';
 
   constructor(private http: HttpClient) {}
 
@@ -19,5 +19,12 @@ export class ComandService {
 
   searchComand(data: string):Observable<Comand[]> {
     return this.http.get<Comand[]>(this.urlEndPoint)
+  }
+
+
+  //Busca por id
+  getComandforId(id: string): Observable<Comand> {
+    const url = `${this.urlEndPoint}/${id}`;
+    return this.http.get<Comand>(url);
   }
 }

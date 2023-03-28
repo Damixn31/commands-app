@@ -1,2 +1,17 @@
 <h2>comands</h2>
 
+<div>
+  <div>
+    <app-comand-input (onEnter)="search( $event )" (onDebounce)="sugerence( $event )" placeholder="Buscar comando..."></app-comand-input>
+  </div>
+</div>
+
+<div *ngIf="hayError">
+    No se encontro nada con la data {{ termino }}
+</div>
+
+<div *ngIf="comand.length > 0">
+  <div>
+    <app-comand-table [comands]="comand"></app-comand-table>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<table >
+      <thead>
+        <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comand of comands; let i = index">
+          <td>
+          </td>
+          <td> {{comand.name}}</td>
+          <td>{{comand.description}}</td>
+          <td> {{comand.example}}</td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
